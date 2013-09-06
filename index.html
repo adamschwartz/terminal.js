@@ -4,8 +4,6 @@
 <pre>
 <b>terminal.js</b> (<a href="http://github.com/adamschwartz/terminal.js">GitHub</a>)
 
-&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;
-
 Open the console to begin. For reference, here
 is the DOM structure of this page:
 
@@ -20,26 +18,30 @@ is the DOM structure of this page:
     &lt;/i&gt;
 &lt;/div&gt;
 
+&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;&ndash;
 
 Type <b>pwd</b> and hit ENTER.
 > body
 > &#9654;[&lt;body&gt;&hellip;&lt;/body&gt;]
 
-
 Type <b>cd('div')</b> and hit ENTER.
 > body > div:nth-child(1)
 > &#9654;[&lt;div&gt;&hellip;&lt;/div&gt;]
-
 
 Type <b>ls</b> and hit ENTER.
 > b
 > i
 > [&lt;b&gt;&lt;/b&gt;, &#9654;&lt;i&gt;&hellip;&lt;/i&gt;]
 
+Type <b>cd('html')</b> and hit ENTER.
+> html
+> &#9654;[&lt;html&gt;&hellip;&lt;/html&gt;]
 
-Get it yet?
+Type <b>rm('b')</b> and hit ENTER.
+(<b>&lt;b&gt;&lt;/b&gt;</b> elements are removed.)
+> &#9654;[&lt;html&gt;&hellip;&lt;/html&gt;]
 
-Enjoy.
+Get it yet? Enjoy.
 
 &mdash; <a href="http://adamschwartz.co">Adam Schwartz</a>
 </pre>
