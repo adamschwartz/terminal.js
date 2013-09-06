@@ -29,8 +29,6 @@ window.__defineGetter__ 'ls', ->
 window.cd = (selector = "*") ->
     if selector is 'html'
         newDOM = document.documentElement
-    else if selector is 'body'
-        newDOM = document.body
     else if selector is '..'
         newDOM = window.__currentDOM.parentNode
     else
