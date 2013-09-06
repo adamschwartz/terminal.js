@@ -11,7 +11,6 @@ getIndexFromDOM = (dom) -> (toArray dom.parentNode.children).indexOf dom
 
 selectorFromDOM = (dom) ->
     return 'html' if dom is document.documentElement
-    return 'body' if dom is document.body
     return selectorFromDOM(dom.parentNode) + ' > ' + dom.tagName.toLowerCase() + ':nth-child(' + getIndexFromDOM(dom) + ')'
 
 # APIs
