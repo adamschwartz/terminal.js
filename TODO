@@ -1,0 +1,4 @@
+– support '../../' (etc.) in cd and rm
+– add cp, mv
+– treat '/' like 'html'?
+– try to integrate with chrome's $0
