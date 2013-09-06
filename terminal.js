@@ -17,6 +17,9 @@
   removeDOM = function(dom) {
     return dom.parentNode.removeChild(dom);
   };
+  window.__defineGetter__('clear', function() {
+    return console.clear();
+  });
   window.__defineGetter__('pwd', function() {
     console.log(currentSelector);
     return currentDOM;
