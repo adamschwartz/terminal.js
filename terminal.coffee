@@ -28,6 +28,6 @@ window.cd = (selector = "*") ->
         window.__currentDOM = newDOM
         window.__currentSelector = selectorFromDOM newDOM
     else
-        console.warn('Could not find', selector)
+        console.warn 'Could not find', selector
 
     return window.__currentSelector
