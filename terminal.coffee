@@ -14,9 +14,14 @@ selectorFromDOM = (dom) ->
 
 # APIs
 
-window.__defineGetter__ 'pwd', -> window.__currentSelector
+window.__defineGetter__ 'pwd', ->
+    console.log window.__currentSelector
+    window.__currentDOM
 
-window.__defineGetter__ 'ls', -> window.__currentDOM.querySelectorAll('*')
+window.__defineGetter__ 'ls', ->
+    children = window.__currentDOM.children
+    console.log (Array::slice.call children).map((d) -> d.tagName.toLowerCase()).join('\n')
+    children
 
 window.cd = (selector = "*") ->
     if selector is '..'
