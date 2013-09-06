@@ -17,6 +17,8 @@ removeDOM = (dom) -> dom.parentNode.removeChild dom
 
 # APIs
 
+window.__defineGetter__ 'clear', -> console.clear()
+
 window.__defineGetter__ 'pwd', ->
     console.log currentSelector
     currentDOM
