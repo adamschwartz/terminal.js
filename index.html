@@ -1,0 +1,43 @@
+<title>terminal.js &mdash; a terrible idea</title>
+<body>
+<pre>
+<b>terminal.js</b> (<a href="http://github.com/adamschwartz/terminal.js">GitHub</a>)
+
+Here is the DOM structure of this page:
+
+&lt;pre&gt;
+    &lt;!-- ... --&gt;
+&lt;/pre&gt;
+&lt;div&gt;
+    &lt;b&gt;&lt;/b&gt;
+    &lt;i&gt;
+        &lt;span&gt;&lt;/span&gt;
+        &lt;br/&gt;
+    &lt;/i&gt;
+&lt;/div&gt;
+
+Open the console to begin.
+
+Type <b>pwd</b> and hit ENTER.
+> "body"
+
+Type <b>cd('div')</b> and hit ENTER.
+> "body > div:nth-child(1)"
+
+Type <b>ls</b> and hit ENTER.
+> [&lt;b&gt;&lt;/b&gt;, &lt;i&gt;&hellip;&lt;/i&gt;, &lt;span&gt;&lt;/span&gt;, &lt;br&gt;]
+
+Get it yet?
+
+Enjoy.
+
+&mdash; <a href="http://adamschwartz.co">Adam Schwartz</a>
+</pre>
+<div>
+    <b></b>
+    <i>
+        <span></span>
+        <br/>
+    </i>
+</div>
+<script src="terminal.js"></script>
