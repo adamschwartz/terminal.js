@@ -36,8 +36,6 @@
     }
     if (selector === 'html') {
       newDOM = document.documentElement;
-    } else if (selector === 'body') {
-      newDOM = document.body;
     } else if (selector === '..') {
       newDOM = window.__currentDOM.parentNode;
     } else {
