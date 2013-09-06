@@ -35,4 +35,5 @@ window.cd = (selector = "*") ->
     else
         console.warn 'Could not find', selector
 
-    return window.__currentSelector
+    console.log window.__currentSelector
+    window.__currentDOM

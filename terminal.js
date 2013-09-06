@@ -42,6 +42,7 @@
     } else {
       console.warn('Could not find', selector);
     }
-    return window.__currentSelector;
+    console.log(window.__currentSelector);
+    return window.__currentDOM;
   };
 }).call(this);
