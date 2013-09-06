@@ -13,6 +13,8 @@ selectorFromDOM = (dom) ->
     return 'html' if dom is document.documentElement
     return selectorFromDOM(dom.parentNode) + ' > ' + dom.tagName.toLowerCase() + ':nth-child(' + getIndexFromDOM(dom) + ')'
 
+removeDOM = (dom) -> dom.parentNode.removeChild dom
+
 # APIs
 
 window.__defineGetter__ 'pwd', ->
@@ -41,4 +43,14 @@ window.cd = (selector = "*") ->
         console.warn 'Could not find', selector
 
     console.log window.__currentSelector
+    window.__currentDOM
+
+window.rm = (thing) ->
+    thing = window.__currentDOM.querySelectorAll thing if typeof thing is 'string'
+
+    if thing.length
+        toArray(thing).forEach (dom) -> removeDOM dom
+    else
+        removeDOM thing
+
     window.__currentDOM
