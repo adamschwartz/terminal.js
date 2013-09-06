@@ -1,7 +1,7 @@
 (function() {
-  var getIndexFromDOM, removeDOM, selectorFromDOM, toArray;
-  window.__currentSelector = 'body';
-  window.__currentDOM = document.body;
+  var currentDOM, currentSelector, getIndexFromDOM, removeDOM, selectorFromDOM, toArray;
+  currentSelector = 'body';
+  currentDOM = document.body;
   toArray = function(thing) {
     return Array.prototype.slice.call(thing);
   };
@@ -18,12 +18,12 @@
     return dom.parentNode.removeChild(dom);
   };
   window.__defineGetter__('pwd', function() {
-    console.log(window.__currentSelector);
-    return window.__currentDOM;
+    console.log(currentSelector);
+    return currentDOM;
   });
   window.__defineGetter__('ls', function() {
     var children;
-    children = window.__currentDOM.children;
+    children = currentDOM.children;
     console.log((toArray(children)).map(function(d) {
       return d.tagName.toLowerCase();
     }).join('\n'));
@@ -37,22 +37,22 @@
     if (selector === 'html') {
       newDOM = document.documentElement;
     } else if (selector === '..') {
-      newDOM = window.__currentDOM.parentNode;
+      newDOM = currentDOM.parentNode;
     } else {
-      newDOM = window.__currentDOM.querySelector(selector);
+      newDOM = currentDOM.querySelector(selector);
     }
     if (newDOM) {
-      window.__currentDOM = newDOM;
-      window.__currentSelector = selectorFromDOM(newDOM);
+      currentDOM = newDOM;
+      currentSelector = selectorFromDOM(newDOM);
     } else {
       console.warn('Could not find', selector);
     }
-    console.log(window.__currentSelector);
-    return window.__currentDOM;
+    console.log(currentSelector);
+    return currentDOM;
   };
   window.rm = function(thing) {
     if (typeof thing === 'string') {
-      thing = window.__currentDOM.querySelectorAll(thing);
+      thing = currentDOM.querySelectorAll(thing);
     }
     if (thing.length) {
       toArray(thing).forEach(function(dom) {
@@ -61,6 +61,6 @@
     } else {
       removeDOM(thing);
     }
-    return window.__currentDOM;
+    return currentDOM;
   };
 }).call(this);
