@@ -5,7 +5,9 @@ window.__currentDOM = document.body
 
 # Internals
 
-getIndexFromDOM = (dom) -> (Array::slice.call dom.parentNode.children).indexOf dom
+toArray = (thing) -> Array::slice.call thing
+
+getIndexFromDOM = (dom) -> (toArray dom.parentNode.children).indexOf dom
 
 selectorFromDOM = (dom) ->
     return 'html' if dom is document.documentElement
@@ -20,7 +22,7 @@ window.__defineGetter__ 'pwd', ->
 
 window.__defineGetter__ 'ls', ->
     children = window.__currentDOM.children
-    console.log (Array::slice.call children).map((d) -> d.tagName.toLowerCase()).join('\n')
+    console.log (toArray children).map((d) -> d.tagName.toLowerCase()).join('\n')
     children
 
 window.cd = (selector = "*") ->
