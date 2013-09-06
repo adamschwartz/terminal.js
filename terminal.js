@@ -15,10 +15,16 @@
     return selectorFromDOM(dom.parentNode) + ' > ' + dom.tagName.toLowerCase() + ':nth-child(' + getIndexFromDOM(dom) + ')';
   };
   window.__defineGetter__('pwd', function() {
-    return window.__currentSelector;
+    console.log(window.__currentSelector);
+    return window.__currentDOM;
   });
   window.__defineGetter__('ls', function() {
-    return window.__currentDOM.querySelectorAll('*');
+    var children;
+    children = window.__currentDOM.children;
+    console.log((Array.prototype.slice.call(children)).map(function(d) {
+      return d.tagName.toLowerCase();
+    }).join('\n'));
+    return children;
   });
   window.cd = function(selector) {
     var newDOM;
