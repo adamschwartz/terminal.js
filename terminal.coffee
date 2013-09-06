@@ -24,7 +24,11 @@ window.__defineGetter__ 'ls', ->
     children
 
 window.cd = (selector = "*") ->
-    if selector is '..'
+    if selector is 'html'
+        newDOM = document.documentElement
+    else if selector is 'body'
+        newDOM = document.body
+    else if selector is '..'
         newDOM = window.__currentDOM.parentNode
     else
         newDOM = window.__currentDOM.querySelector selector
